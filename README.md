@@ -49,6 +49,14 @@ python scripts/verify.py --data data
 | Claude Code | 复制到 `~/.claude/skills/doctor-selection/`（或项目内 `.claude/skills/`） |
 | OpenClaw / Cursor 等 | 放到其 skills 目录，或把 `SKILL.md` 作为项目规则引入 |
 
+```powershell
+# DSH（Windows，软链，改动实时生效）
+New-Item -ItemType Junction -Path "$env:USERPROFILE\.dsh\skills\doctor-selection" -Target "<本仓库绝对路径>"
+
+# Claude Code / 其它类 Unix 宿主（复制）
+cp -r "<本仓库绝对路径>" ~/.claude/skills/doctor-selection
+```
+
 不要写死绝对路径：技能内部一律用「仓库根目录 + 相对路径」，数据目录可由调用方传入。
 装载后，遇到「某医院某科室有哪些医生」「某医生怎么样」「怎么选医生」会按流程走：
 本地数据 → 渠道采集（脚本或浏览器）→ 交叉验证 → 按亚专业给候选。
