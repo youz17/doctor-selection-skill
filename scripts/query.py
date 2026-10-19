@@ -18,6 +18,12 @@ import json
 import os
 import sys
 
+try:
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
+
 FIELDS = ["hospital", "dept", "name", "sex", "title", "goodat",
           "intro", "academic", "clinic_time", "schedule", "url"]
 SEARCH_IN = ["name", "goodat", "intro", "title", "dept", "academic"]

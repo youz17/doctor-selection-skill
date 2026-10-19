@@ -18,6 +18,12 @@ from urllib.parse import urljoin, quote
 import requests
 from bs4 import BeautifulSoup
 
+try:
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
+
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36")
 BASE_TJH = "https://www.tjh.com.cn"

@@ -2,5 +2,6 @@ __pycache__/
 *.pyc
 data/
 *.log
+_acl-recovery/
 .DS_Store
 Thumbs.db

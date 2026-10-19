@@ -17,6 +17,12 @@ import re
 import sys
 from collections import Counter
 
+try:
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+except Exception:
+    pass
+
 REQUIRED = ["name", "dept"]
 CHECK_FIELDS = ["title", "goodat", "intro", "clinic_time", "schedule", "url"]
 
